@@ -57,5 +57,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://filmografapi.herokuapp.com/"
+  "proxy": "https://filmografapi.herokuapp.com/api/"
 }
