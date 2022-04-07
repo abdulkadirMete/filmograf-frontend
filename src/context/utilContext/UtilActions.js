@@ -1,0 +1,8 @@
+export const TOGGLE_ASIDE = "TOGGLE_ASIDE";
+export const TOGGLE_SUB = "TOGGLE_SUB";
+export const TOGGLE_CONTACT = "TOGGLE_CONTACT";
+export const TOGGLE_NAV = "TOGGLE_NAV";
+export const TOGGLE_REGISTER = "TOGGLE_REGISTER";
+export const SEND_MAIL_SUCCESS = "SEND_MAIL_SUCCESS";
+export const SEND_MAIL_FAIL = "SEND_MAIL_FAIL";
+export const SEND_MAIL_START = "SEND_MAIL_START";
