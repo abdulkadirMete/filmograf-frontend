@@ -1,6 +1,6 @@
 import moment from "moment";
 import trLocale from "moment/locale/tr";
-import { defaultPhoto, scrollSettings } from "../data/options";
+import { defaultPhoto, getRawImageFromApiUrl, scrollSettings } from "../data/options";
 const scrollToElement = require("scroll-to-element");
 
 // object check empty
@@ -11,7 +11,7 @@ export function isEmpty(obj) {
 // return user image for all conditions
 export function purifyUserImage(image) {
   return image
-    ? `${process.env.REACT_APP_USE_IMAGE_URL}${image}`
+    ? `${getRawImageFromApiUrl}${image}`
     : defaultPhoto;
 }
 

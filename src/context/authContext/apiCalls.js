@@ -1,4 +1,5 @@
 import axios from "axios";
+import { baseApiUrl } from "../../data/options";
 import {
   addToWatchListState,
   clearToWatchListState,
@@ -26,7 +27,7 @@ import {
 export const login = async (user, dispatch) => {
   dispatch(loginStart());
   try {
-    const res = await axios.post(`/api/auth/login`, user);
+    const res = await axios.post(`${baseApiUrl}/api/auth/login`, user);
     dispatch(loginSuccess(res.data));
   } catch (err) {
     dispatch(loginFailure(err.response.data.message || err.message));
@@ -42,7 +43,7 @@ export const logout = (dispatch) => {
 export const registerUser = async (user, dispatch) => {
   dispatch(registerStart());
   try {
-    const res = await axios.post(`/api/auth/register`, user);
+    const res = await axios.post(`${baseApiUrl}/api/auth/register`, user);
     dispatch(registerSuccess(res.data));
   } catch (err) {
     dispatch(registerFailure(err.response.data.message || err.message));
@@ -61,7 +62,7 @@ export const uploadUserImg = async (imgData, dispatch) => {
   try {
     var bodyFormData = new FormData();
     bodyFormData.append("img", imgData);
-    const res = await axios.post(`/api/users/uplaod/image`, bodyFormData, {
+    const res = await axios.post(`${baseApiUrl}/api/users/uplaod/image`, bodyFormData, {
       headers: {
         "Content-Type": "multipart/form-data",
         token: "Bearer " + token,
@@ -78,7 +79,7 @@ export const uploadUserImg = async (imgData, dispatch) => {
 export const sendVerificationEmail = async (userId, dispatch) => {
   dispatch(sendMailStart());
   try {
-    const res = await axios.get(`/api/auth/verify/${userId}`);
+    const res = await axios.get(`${baseApiUrl}/api/auth/verify/${userId}`);
     dispatch(sendMailSuccess(res.data));
   } catch (err) {
     dispatch(sendMailFailure(err.response.data.message || err.message));
@@ -87,10 +88,9 @@ export const sendVerificationEmail = async (userId, dispatch) => {
 
 // verify
 export const verifyUser = async (userId, token, dispatch) => {
-  console.log(`/api/auth/verify/${userId}/${token}`);
   dispatch(verifyStart());
   try {
-    const res = await axios.post(`/api/auth/verify/`, { userId, token });
+    const res = await axios.post(`${baseApiUrl}/api/auth/verify/`, { userId, token });
     dispatch(verifySuccess(res.data.success));
   } catch (error) {
     dispatch(verifyFailure(error));

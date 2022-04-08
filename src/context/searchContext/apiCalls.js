@@ -1,4 +1,5 @@
 import axios from "axios";
+import { baseApiUrl } from "../../data/options";
 import {
   clearResultsState,
   searchFail,
@@ -12,7 +13,7 @@ export const searchMovie = async (phrase, dispatch) => {
   dispatch(searchStart());
   try {
     const res = await axios.get(
-      `/api/movies/filter/search?phrase=${phrase ? phrase : ""}`
+      `${baseApiUrl}/api/movies/filter/search?phrase=${phrase ? phrase : ""}`
     );
     dispatch(searchSuccess(res.data.movies));
   } catch (error) {

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { baseApiUrl } from "../../data/options";
 import {
   deleteCommentFail,
   deleteCommentStart,
@@ -19,7 +20,7 @@ export const getComment = async (movieId, dispatch) => {
   dispatch(fetchCommentsStart());
   try {
     const res = await axios.post(
-      `/api/tools/comment`,
+      `${baseApiUrl}/api/tools/comment`,
       movieId
     );
     dispatch(fetchCommentsSuccess(res.data));
@@ -33,7 +34,7 @@ export const putComment = async (comment, dispatch) => {
   dispatch(putCommentStart());
   try {
     const res = await axios.put(
-      `/api/tools/comment`,
+      `${baseApiUrl}/api/tools/comment`,
       comment,
       {
         headers: {
@@ -54,7 +55,7 @@ export const deleteComment = async (comment, dispatch) => {
   dispatch(deleteCommentStart());
   try {
     const res = await axios.delete(
-      `/api/tools/comment`,
+      `${baseApiUrl}/api/tools/comment`,
       {
         headers: {
           token:
@@ -79,7 +80,7 @@ export const getLastComments = async (dispatch) => {
   dispatch(fetchLastCommentsStart());
   try {
     const res = await axios.get(
-      `/api/tools/comment/last`
+      `${baseApiUrl}/api/tools/comment/last`
     );
     dispatch(fetchLastCommentsSuccess(res.data));
   } catch (error) {

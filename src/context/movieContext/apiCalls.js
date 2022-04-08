@@ -1,4 +1,5 @@
 import axios from "axios";
+import { baseApiUrl } from "../../data/options";
 import {
   fetchMovieFail,
   fetchMoviesFail,
@@ -34,7 +35,7 @@ export const getMoviesFromUrl = async (url, dispatch) => {
 
 // get movies
 export const getMovies = async (page, dispatch) => {
-  const url = `/api/movies/${page ? page : 1}`;
+  const url = `${baseApiUrl}/api/movies/${page ? page : 1}`;
   getMoviesFromUrl(url, dispatch);
 };
 
@@ -42,7 +43,7 @@ export const getMovies = async (page, dispatch) => {
 export const getPopularMovies = async (page, dispatch) => {
   dispatch(fetchMoviesStart());
   try {
-    const res = await axios.get(`/api/movies/popular/${page ? page : 1}`);
+    const res = await axios.get(`${baseApiUrl}/api/movies/popular/${page ? page : 1}`);
     dispatch(fetchPopularMoviesSuccess(res.data.movies, res.data.count));
   } catch (error) {
     dispatch(fetchMoviesFail(error));
@@ -51,13 +52,13 @@ export const getPopularMovies = async (page, dispatch) => {
 
 // get release of movie
 export const getReleaseOfMovies = async (release, page, dispatch) => {
-  const url = `/api/filter/release/${release}/${page ? page : 1}`;
+  const url = `${baseApiUrl}/api/filter/release/${release}/${page ? page : 1}`;
   getMoviesFromUrl(url, dispatch);
 };
 
 // applyRobotFilter
 export const applyRobotFilter = async (type, release, imdb, page, dispatch) => {
-  const url = `/api/filter/robot/${page ? page : 1}?type=${
+  const url = `${baseApiUrl}/api/filter/robot/${page ? page : 1}?type=${
     type ? type : ""
   }&release=${release ? release : ""}&imdb=${imdb ? imdb : ""}`;
 
@@ -66,7 +67,7 @@ export const applyRobotFilter = async (type, release, imdb, page, dispatch) => {
 
 // get type of movie
 export const getTypesOfMovies = async (type, page, dispatch) => {
-  const url = `/api/types/${type}/${page ? page : 1}`;
+  const url = `${baseApiUrl}/api/types/${type}/${page ? page : 1}`;
   getMoviesFromUrl(url, dispatch);
 };
 
@@ -74,7 +75,7 @@ export const getTypesOfMovies = async (type, page, dispatch) => {
 export const getSliderMovies = async (dispatch) => {
   dispatch(fetchSliderStart());
   try {
-    const res = await axios.get(`/api/movies/showcase/slider`);
+    const res = await axios.get(`${baseApiUrl}/api/movies/showcase/slider`);
     dispatch(fetchSliderSuccess(res.data.movies));
   } catch (error) {
     dispatch(fetchSliderFail(error));
@@ -84,8 +85,8 @@ export const getSliderMovies = async (dispatch) => {
 // get single movie
 export const getSingleMovie = async (id, dispatch) => {
   dispatch(fetchMovieStart());
-  const req1 = axios.get(`/api/movies/movie/${id}`);
-  const req2 = axios.get(`/api/movies/movie/rate/${id}`);
+  const req1 = axios.get(`${baseApiUrl}/api/movies/movie/${id}`);
+  const req2 = axios.get(`${baseApiUrl}/api/movies/movie/rate/${id}`);
   axios
     .all([req1, req2])
     .then(
@@ -105,7 +106,7 @@ export const getSingleMovie = async (id, dispatch) => {
 export const getRandomMovie = async (dispatch) => {
   dispatch(fetchRandomStart());
   try {
-    const res = await axios.get(`/api/movies/pick/random`);
+    const res = await axios.get(`${baseApiUrl}/api/movies/pick/random`);
     dispatch(fetchRandomSuccess(res.data));
   } catch (error) {
     dispatch(fetchRandomFail(error));
@@ -131,7 +132,7 @@ export const setRobotFilterValues = (values, dispatch) => {
 export const increaseView = async (movieId, dispatch) => {
   dispatch(increaseViewStart());
   try {
-    await axios.get(`/api/movies/movie/view/${movieId}`);
+    await axios.get(`${baseApiUrl}/api/movies/movie/view/${movieId}`);
     dispatch(increaseViewSuccess());
   } catch (error) {
     dispatch(increaseViewFail(error));

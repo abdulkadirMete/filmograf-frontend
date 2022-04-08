@@ -134,3 +134,8 @@ export const defaultPhoto =
   "https://www.computerhope.com/jargon/g/guest-user.jpg";
 export const defaultMoviePhoto =
   "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg";
+
+// api url options
+export const baseApiUrl = "https://filmografapi.herokuapp.com";
+
+export const getRawImageFromApiUrl = "https://filmografapi.herokuapp.com/uploads/";
