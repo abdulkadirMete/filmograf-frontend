@@ -19,7 +19,7 @@ export const getComment = async (movieId, dispatch) => {
   dispatch(fetchCommentsStart());
   try {
     const res = await axios.post(
-      `${process.env.REACT_APP_BASE_URL}/tools/comment`,
+      `/api/tools/comment`,
       movieId
     );
     dispatch(fetchCommentsSuccess(res.data));
@@ -33,7 +33,7 @@ export const putComment = async (comment, dispatch) => {
   dispatch(putCommentStart());
   try {
     const res = await axios.put(
-      `${process.env.REACT_APP_BASE_URL}/tools/comment`,
+      `/api/tools/comment`,
       comment,
       {
         headers: {
@@ -54,7 +54,7 @@ export const deleteComment = async (comment, dispatch) => {
   dispatch(deleteCommentStart());
   try {
     const res = await axios.delete(
-      `${process.env.REACT_APP_BASE_URL}/tools/comment`,
+      `/api/tools/comment`,
       {
         headers: {
           token:
@@ -79,7 +79,7 @@ export const getLastComments = async (dispatch) => {
   dispatch(fetchLastCommentsStart());
   try {
     const res = await axios.get(
-      `${process.env.REACT_APP_BASE_URL}/tools/comment/last`
+      `/api/tools/comment/last`
     );
     dispatch(fetchLastCommentsSuccess(res.data));
   } catch (error) {

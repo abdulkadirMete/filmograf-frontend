@@ -9,7 +9,7 @@ import {
 export const getTypes = async (dispatch) => {
   dispatch(fetchTypesStart());
   try {
-    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/types`);
+    const res = await axios.get(`/api/types`);
     dispatch(fetchTypesSuccess(res.data));
   } catch (error) {
     dispatch(fetchTypesFail(error));

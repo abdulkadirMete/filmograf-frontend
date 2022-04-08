@@ -13,7 +13,7 @@ import {
 export const putRate = async (rateObject, dispatch) => {
   dispatch(putRateStart());
   try {
-    const res = await axios.put(`${process.env.REACT_APP_BASE_URL}/tools/rate`, rateObject);
+    const res = await axios.put(`/api/tools/rate`, rateObject);
     dispatch(putRateSuccess(res.data));
   } catch (error) {
     dispatch(putRateFail(error));
@@ -24,7 +24,7 @@ export const putRate = async (rateObject, dispatch) => {
 export const getUserRate = async (rateObject, dispatch) => {
   dispatch(getRateStart());
   try {
-    const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/tools/rate`, rateObject);
+    const res = await axios.post(`/api/tools/rate`, rateObject);
     dispatch(getRateSuccess(res.data));
   } catch (error) {
     dispatch(getRateFail(error));
