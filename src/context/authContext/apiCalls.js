@@ -26,7 +26,7 @@ import {
 export const login = async (user, dispatch) => {
   dispatch(loginStart());
   try {
-    const res = await axios.post("auth/login", user);
+    const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/login`, user);
     dispatch(loginSuccess(res.data));
   } catch (err) {
     dispatch(loginFailure(err.response.data.message || err.message));
@@ -42,7 +42,7 @@ export const logout = (dispatch) => {
 export const registerUser = async (user, dispatch) => {
   dispatch(registerStart());
   try {
-    const res = await axios.post("auth/register", user);
+    const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/register`, user);
     dispatch(registerSuccess(res.data));
   } catch (err) {
     dispatch(registerFailure(err.response.data.message || err.message));
@@ -61,7 +61,7 @@ export const uploadUserImg = async (imgData, dispatch) => {
   try {
     var bodyFormData = new FormData();
     bodyFormData.append("img", imgData);
-    const res = await axios.post("users/uplaod/image", bodyFormData, {
+    const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/users/uplaod/image`, bodyFormData, {
       headers: {
         "Content-Type": "multipart/form-data",
         token: "Bearer " + token,
@@ -78,7 +78,7 @@ export const uploadUserImg = async (imgData, dispatch) => {
 export const sendVerificationEmail = async (userId, dispatch) => {
   dispatch(sendMailStart());
   try {
-    const res = await axios.get(`auth/verify/${userId}`);
+    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/auth/verify/${userId}`);
     dispatch(sendMailSuccess(res.data));
   } catch (err) {
     dispatch(sendMailFailure(err.response.data.message || err.message));
@@ -87,10 +87,10 @@ export const sendVerificationEmail = async (userId, dispatch) => {
 
 // verify
 export const verifyUser = async (userId, token, dispatch) => {
-  console.log(`auth/verify/${userId}/${token}`);
+  console.log(`${process.env.REACT_APP_BASE_URL}/auth/verify/${userId}/${token}`);
   dispatch(verifyStart());
   try {
-    const res = await axios.post(`/auth/verify/`, { userId, token });
+    const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/verify/`, { userId, token });
     dispatch(verifySuccess(res.data.success));
   } catch (error) {
     dispatch(verifyFailure(error));

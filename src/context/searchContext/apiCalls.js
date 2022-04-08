@@ -12,7 +12,7 @@ export const searchMovie = async (phrase, dispatch) => {
   dispatch(searchStart());
   try {
     const res = await axios.get(
-      `/movies/filter/search?phrase=${phrase ? phrase : ""}`
+      `${process.env.REACT_APP_BASE_URL}/movies/filter/search?phrase=${phrase ? phrase : ""}`
     );
     dispatch(searchSuccess(res.data.movies));
   } catch (error) {

@@ -18,7 +18,10 @@ import {
 export const getComment = async (movieId, dispatch) => {
   dispatch(fetchCommentsStart());
   try {
-    const res = await axios.post("/tools/comment", movieId);
+    const res = await axios.post(
+      `${process.env.REACT_APP_BASE_URL}/tools/comment`,
+      movieId
+    );
     dispatch(fetchCommentsSuccess(res.data));
   } catch (error) {
     dispatch(fetchCommentsFail(error));
@@ -29,11 +32,16 @@ export const getComment = async (movieId, dispatch) => {
 export const putComment = async (comment, dispatch) => {
   dispatch(putCommentStart());
   try {
-    const res = await axios.put("/tools/comment", comment, {
-      headers: {
-        token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
-      },
-    });
+    const res = await axios.put(
+      `${process.env.REACT_APP_BASE_URL}/tools/comment`,
+      comment,
+      {
+        headers: {
+          token:
+            "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+        },
+      }
+    );
 
     dispatch(putCommentSuccess(res.data));
   } catch (error) {
@@ -45,15 +53,19 @@ export const putComment = async (comment, dispatch) => {
 export const deleteComment = async (comment, dispatch) => {
   dispatch(deleteCommentStart());
   try {
-    const res = await axios.delete("/tools/comment", {
-      headers: {
-        token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
-      },
-      data: {
-        commentId: comment.commentId,
-        userId: comment.userId,
-      },
-    });
+    const res = await axios.delete(
+      `${process.env.REACT_APP_BASE_URL}/tools/comment`,
+      {
+        headers: {
+          token:
+            "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+        },
+        data: {
+          commentId: comment.commentId,
+          userId: comment.userId,
+        },
+      }
+    );
 
     dispatch(deleteCommentSuccess(comment.commentId));
   } catch (error) {
@@ -66,7 +78,9 @@ export const deleteComment = async (comment, dispatch) => {
 export const getLastComments = async (dispatch) => {
   dispatch(fetchLastCommentsStart());
   try {
-    const res = await axios.get("/tools/comment/last");
+    const res = await axios.get(
+      `${process.env.REACT_APP_BASE_URL}/tools/comment/last`
+    );
     dispatch(fetchLastCommentsSuccess(res.data));
   } catch (error) {
     dispatch(fetchLastCommentsFail(error));
