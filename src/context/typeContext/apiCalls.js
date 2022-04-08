@@ -1,4 +1,5 @@
 import axios from "axios";
+import { baseApiUrl } from "../../data/options";
 import {
   fetchTypesFail,
   fetchTypesStart,
@@ -9,7 +10,7 @@ import {
 export const getTypes = async (dispatch) => {
   dispatch(fetchTypesStart());
   try {
-    const res = await axios.get(`/api/types`);
+    const res = await axios.get(`${baseApiUrl}/api/types`);
     dispatch(fetchTypesSuccess(res.data));
   } catch (error) {
     dispatch(fetchTypesFail(error));
