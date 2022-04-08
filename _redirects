@@ -1,7 +1,1 @@
-/movies/*  https://filmografapi.herokuapp.com/api/:splat
-/types/*  https://filmografapi.herokuapp.com/api/:splat
-/auth/*  https://filmografapi.herokuapp.com/api/:splat
-/users/*  https://filmografapi.herokuapp.com/api/:splat
-/filter/*  https://filmografapi.herokuapp.com/api/:splat
-/contact/*  https://filmografapi.herokuapp.com/api/:splat
-/tools/*  https://filmografapi.herokuapp.com/api/:splat
+/* /https://filmografapi.herokuapp.com/api/:splat 200
