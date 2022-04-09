@@ -18,7 +18,7 @@ export const HeroSliderWrapper = styled.div`
 
   @media screen and (max-width: 1268px) {
     right: 50%;
-    transform: translateX(52.6%);
+    transform: translateX(50%);
     top: 143px;
   }
 
@@ -80,7 +80,7 @@ export const HeroSliderImage = styled.img`
 
   @media screen and (max-width: 1268px) {
     right: 50%;
-    transform: translateX(50%);
+    transform: translateX(48.6%);
   }
 
   @media screen and (max-width: 768px) {

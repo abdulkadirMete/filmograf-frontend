@@ -45,12 +45,17 @@ export const HeroHeading = styled(Heading)`
   }
 
   @media screen and (max-width: 568px) {
-    font-size: 2rem;
+    font-size: 1.8rem;
     letter-spacing: normal;
   }
 `;
 
-export const HeroText = styled(Text)``;
+export const HeroText = styled(Text)`
+  @media screen and (max-width: 568px) {
+    font-size: 1rem;
+    letter-spacing: normal;
+  }
+`;
 
 // buttons
 
@@ -86,6 +91,12 @@ export const HeroRandomButtom = styled(ButtonPrimary)`
     background-color: ${colors.colorHeroButton};
     transform: scale(1.05);
   }
+
+  @media screen and (max-width: 568px) {
+    font-size: 14px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
 `;
 
 export const HeroSignUpButton = styled(ButtonSecondary)`
@@ -98,6 +109,12 @@ export const HeroSignUpButton = styled(ButtonSecondary)`
 
   &:hover {
     background-color: ${colors.colorHeroSignUpButtonHover};
+  }
+
+  @media screen and (max-width: 568px) {
+    font-size: 14px;
+    padding-top: 11px;
+    padding-bottom: 11px;
   }
 `;
 // stream services

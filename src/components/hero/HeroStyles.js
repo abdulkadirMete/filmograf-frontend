@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container, Section } from "../../styles/globalStyles";
+import { Container } from "../../styles/globalStyles";
 
 export const HeroSection = styled.section`
   height: 100vh;
@@ -22,7 +22,6 @@ export const HeroImage = styled.img`
 `;
 
 export const HeroContainer = styled(Container)`
-  z-index: 1;
   display: flex;
   height: 100%;
 
@@ -38,8 +37,6 @@ export const HeroLeft = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 0.5rem;
-  overflow: visible;
-
   @media screen and (max-width: 1268px) {
     text-align: center;
   }
