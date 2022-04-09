@@ -1,7 +1,9 @@
 import Slider from "react-slick";
 import styled from "styled-components";
 
-export const HeroSlider = styled.div``;
+export const HeroSlider = styled.div`
+  max-height: 100%;
+`;
 
 // slider
 export const HeroSliderWrapper = styled.div`

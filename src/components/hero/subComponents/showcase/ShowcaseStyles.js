@@ -11,26 +11,24 @@ export const HeroShowcaseWrapper = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
-  z-index: 9;
-  margin-top: 100px;
-  position: relative;
+  padding-top: 100px;
 
   @media screen and (max-width: 1268px) {
-    margin-bottom: 0;
-    margin-top: 120px;
+    padding-bottom: 0;
+    padding-top: 120px;
     row-gap: 0.5rem;
   }
 
   @media screen and (max-width: 768px) {
-    margin-top: 20px;
+    padding-top: 20px;
   }
 
   @media screen and (max-width: 568px) {
-    margin-bottom: 70px;
+    padding-bottom: 70px;
   }
 
   @media screen and (max-width: 376px) {
-    margin-bottom: 10px;
+    padding-bottom: 10px;
   }
 `;
 
@@ -41,6 +39,7 @@ export const HeroHeading = styled(Heading)`
   letter-spacing: 4px;
 
   @media screen and (max-width: 1268px) {
+    text-align: center;
     font-size: 2.5rem;
   }
 
