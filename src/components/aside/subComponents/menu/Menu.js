@@ -52,8 +52,8 @@ export const Menu = () => {
   };
 
   return (
-    <MenuContainer onClick={() => toggleAside(false)}>
-      <Link to="/">
+    <MenuContainer>
+      <Link to="/" onClick={() => toggleAside(false)}>
         <MenuGroup>
           <AiFillHome />
           <MenuItem>{strings.home}</MenuItem>

@@ -89,7 +89,6 @@ export const Search = () => {
           placeholder="Film Ara"
           type="text"
           value={searchText}
-          onBlur={() => toggleMobileSearch(false)}
           onChange={handleSearch}
         />
 
