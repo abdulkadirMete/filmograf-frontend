@@ -136,6 +136,6 @@ export const defaultMoviePhoto =
   "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg";
 
 // api url options
-export const baseApiUrl = "https://filmografapi.herokuapp.com";
+export const baseApiUrl = "http://localhost:8800";
 
-export const getRawImageFromApiUrl = "https://filmografapi.herokuapp.com/uploads/";
+export const getRawImageFromApiUrl = `${baseApiUrl}/uploads/`;

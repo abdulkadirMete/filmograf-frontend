@@ -87,7 +87,7 @@ export const strings = {
   navMenuMyList: "Listem",
   navMenuContact: "İletişim",
   uplaodPpError:
-    "Bir hata oluştu  fotoğrafın boyutunu 1mb geçmediğinden emin olun",
+    "Bir hata oluştu  fotoğraf boyutunun 10mb geçmediğinden emin olun",
 
   getRandomMovie: "Rastgele Film Getir",
 };

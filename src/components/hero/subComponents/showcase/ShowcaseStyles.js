@@ -13,6 +13,7 @@ export const HeroShowcaseWrapper = styled.div`
   row-gap: 1.5rem;
   z-index: 9;
   margin-top: 100px;
+  position: relative;
 
   @media screen and (max-width: 1268px) {
     margin-bottom: 0;

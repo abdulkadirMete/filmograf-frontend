@@ -60,12 +60,12 @@ export const uploadUserImg = async (imgData, dispatch) => {
   dispatch(uploadUserImgStart());
   const token = JSON.parse(localStorage.getItem("user")).accessToken;
   try {
-    var bodyFormData = new FormData();
-    bodyFormData.append("img", imgData);
-    const res = await axios.post(`${baseApiUrl}/api/users/uplaod/image`, bodyFormData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-        token: "Bearer " + token,
+    const res = await axios({
+      method: "post",
+      url: `${baseApiUrl}/api/users/uplaod/image`,
+      headers: { token: "Bearer " + token },
+      data: {
+        imgData,
       },
     });
     const user = { ...res.data, accessToken: token };
@@ -90,7 +90,10 @@ export const sendVerificationEmail = async (userId, dispatch) => {
 export const verifyUser = async (userId, token, dispatch) => {
   dispatch(verifyStart());
   try {
-    const res = await axios.post(`${baseApiUrl}/api/auth/verify/`, { userId, token });
+    const res = await axios.post(`${baseApiUrl}/api/auth/verify/`, {
+      userId,
+      token,
+    });
     dispatch(verifySuccess(res.data.success));
   } catch (error) {
     dispatch(verifyFailure(error));

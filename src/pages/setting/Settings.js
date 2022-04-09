@@ -10,7 +10,11 @@ import {
 import { AuthContext } from "../../context/authContext/AuthContext";
 import { strings } from "../../data/text";
 import { purifyUserImage } from "../../helpers/helpers";
-import { DialogButton, Loading } from "../../styles/globalStyles";
+import {
+  DialogButton,
+  Loading,
+  PageLoadingWrapper,
+} from "../../styles/globalStyles";
 import { AuthContainer, AuthHeading, AuthSection } from "../auth/AuthStyles";
 import {
   AccountVerificationBar,
@@ -55,10 +59,10 @@ export const Settings = () => {
   useEffect(() => {
     if (SelectedImage) {
       const reader = new FileReader();
+      reader.readAsDataURL(SelectedImage);
       reader.onloadend = () => {
         setPreview(reader.result);
       };
-      reader.readAsDataURL(SelectedImage);
     } else {
       setPreview(null);
     }
@@ -75,7 +79,7 @@ export const Settings = () => {
   // upload pp
   const handleUploadUserImage = () => {
     setSubmit(true);
-    uploadUserImg(SelectedImage, dispatch);
+    uploadUserImg(preview, dispatch);
   };
   // message after upload
   useEffect(() => {
@@ -110,8 +114,12 @@ export const Settings = () => {
   }, [sendMailSuccess, sendMailError]);
 
   // loading
-  if (!user) {
-    return <Loading />;
+  if (!user || uplaodImageLoading) {
+    return (
+      <PageLoadingWrapper>
+        <Loading />
+      </PageLoadingWrapper>
+    );
   }
   return (
     <AuthSection>
@@ -179,6 +187,7 @@ export const Settings = () => {
             )}
             <AvatarInput
               ref={fileRef}
+              accept="image/png, image/gif, image/jpeg"
               type="file"
               onChange={fileSelectedHandler}
             />
