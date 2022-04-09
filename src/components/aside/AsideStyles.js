@@ -4,7 +4,7 @@ import { colors } from "../../styles/variables";
 
 export const AsideMenu = styled.aside`
   width: 70%;
-  height: 100%;
+  height: 100vh;
   position: fixed;
   background: ${colors.colorAsideTry};
   top: 0;
@@ -24,7 +24,7 @@ export const AsideMenu = styled.aside`
 `;
 
 export const AsideContainer = styled(Container)`
-  margin-top: 80px;
+  margin-top: 40px;
   height: 100%;
   display: flex;
   flex-direction: column;

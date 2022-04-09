@@ -13,6 +13,7 @@ export const HeroShowcaseWrapper = styled.div`
   row-gap: 1.5rem;
   padding-top: 100px;
   z-index: 2;
+  position: static;
 
   @media screen and (max-width: 1268px) {
     padding-bottom: 0;
