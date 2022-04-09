@@ -1,16 +1,15 @@
 import styled from "styled-components";
-import { Container } from "../../styles/globalStyles";
+import { Container, Section } from "../../styles/globalStyles";
+import { colors } from "../../styles/variables";
 
 export const HeroSection = styled.section`
-  min-height: 100%;
   height: 100vh;
-  padding: 2rem 0;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  background-color: ${colors.colorBlack};
 
   @media screen and (max-width: 1268px) {
-    padding: 1.5rem 0px;
+    height: 120vh;
   }
 `;
 
@@ -24,9 +23,12 @@ export const HeroImage = styled.img`
 export const HeroContainer = styled(Container)`
   display: flex;
   height: 100%;
+  margin-top: 80px;
+  background-color: ${colors.colorBlack};
 
   @media screen and (max-width: 1268px) {
     flex-direction: column-reverse;
+    padding: 40px 0;
   }
 `;
 
@@ -37,6 +39,7 @@ export const HeroLeft = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 0.5rem;
+
   @media screen and (max-width: 1268px) {
     text-align: center;
   }
@@ -45,5 +48,4 @@ export const HeroLeft = styled.div`
 // right
 export const HeroRight = styled.div`
   flex: 1;
-  position: relative;
 `;

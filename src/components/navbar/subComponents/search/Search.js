@@ -24,7 +24,7 @@ export const Search = () => {
   const { searchResults, searchLoading, searchError, dispatch } =
     useContext(SearchContext);
 
-  const { toggleAside } = useContext(UtilContext);
+  const { toggleAside, showNav } = useContext(UtilContext);
 
   // focus search
   const searchRef = useRef(null);
@@ -84,10 +84,12 @@ export const Search = () => {
           <FaSearch />
         )}
         <NavSearch
+          showNav={showNav}
           ref={searchRef}
           placeholder="Film Ara"
           type="text"
           value={searchText}
+          onBlur={() => toggleMobileSearch(false)}
           onChange={handleSearch}
         />
 

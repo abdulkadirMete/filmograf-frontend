@@ -9,9 +9,11 @@ import { LoadingDot } from "../../../../styles/globalStyles";
 import { SliderMovieItem } from "../sliderMovieItem/SliderMovieItem";
 import {
   Caurousel,
+  HeroSlideGroup,
   HeroSlider,
   HeroSliderImage,
   HeroSliderWrapper,
+  SliderLoading,
 } from "./SliderStyles";
 
 export const Slider = () => {
@@ -30,25 +32,26 @@ export const Slider = () => {
 
   return (
     <HeroSlider>
-      <HeroSliderImage src="/images/tv.webp"></HeroSliderImage>
-      <HeroSliderWrapper>
-        {sliderLoading ? (
-          <LoadingDot secondary={true} />
-        ) : (
-          <>
-            <Caurousel {...sliderSettings}>
-              {sliderMovies?.slice(0, slidePerSlider).map((movie) => {
-                return <SliderMovieItem key={movie._id} {...movie} />;
-              })}
-            </Caurousel>
-            <Caurousel rtl={true} {...sliderSettings}>
-              {sliderMovies?.slice(-slidePerSlider).map((movie) => {
-                return <SliderMovieItem key={movie._id} {...movie} />;
-              })}
-            </Caurousel>
-          </>
-        )}
-      </HeroSliderWrapper>
+      <HeroSlideGroup>
+      {sliderLoading && <SliderLoading secondary={true} />}
+        <HeroSliderImage src="/images/tv.png"></HeroSliderImage>
+        <HeroSliderWrapper>
+          {!sliderLoading && (
+            <>
+              <Caurousel {...sliderSettings}>
+                {sliderMovies?.slice(0, slidePerSlider).map((movie) => {
+                  return <SliderMovieItem key={movie._id} {...movie} />;
+                })}
+              </Caurousel>
+              <Caurousel rtl={true} {...sliderSettings}>
+                {sliderMovies?.slice(-slidePerSlider).map((movie) => {
+                  return <SliderMovieItem key={movie._id} {...movie} />;
+                })}
+              </Caurousel>
+            </>
+          )}
+        </HeroSliderWrapper>
+      </HeroSlideGroup>
     </HeroSlider>
   );
 };

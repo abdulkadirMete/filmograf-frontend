@@ -10,26 +10,13 @@ import { borders, colors } from "../../../../styles/variables";
 export const HeroShowcaseWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   row-gap: 1.5rem;
-  padding-top: 100px;
-  z-index: 2;
+  height: 100%;
+  z-index: 3;
 
   @media screen and (max-width: 1268px) {
-    padding-bottom: 0;
-    padding-top: 120px;
-    row-gap: 0.5rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    padding-top: 20px;
-  }
-
-  @media screen and (max-width: 568px) {
-    padding-bottom: 70px;
-  }
-
-  @media screen and (max-width: 376px) {
-    padding-bottom: 10px;
+    align-items: center;
   }
 `;
 
@@ -40,12 +27,11 @@ export const HeroHeading = styled(Heading)`
   letter-spacing: 4px;
 
   @media screen and (max-width: 1268px) {
-    text-align: center;
     font-size: 2.5rem;
   }
 
   @media screen and (max-width: 568px) {
-    font-size: 1.8rem;
+    font-size: 2rem;
     letter-spacing: normal;
   }
 `;
@@ -91,12 +77,6 @@ export const HeroRandomButtom = styled(ButtonPrimary)`
     background-color: ${colors.colorHeroButton};
     transform: scale(1.05);
   }
-
-  @media screen and (max-width: 568px) {
-    font-size: 14px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
 `;
 
 export const HeroSignUpButton = styled(ButtonSecondary)`
@@ -110,12 +90,6 @@ export const HeroSignUpButton = styled(ButtonSecondary)`
   &:hover {
     background-color: ${colors.colorHeroSignUpButtonHover};
   }
-
-  @media screen and (max-width: 568px) {
-    font-size: 14px;
-    padding-top: 11px;
-    padding-bottom: 11px;
-  }
 `;
 // stream services
 export const StreamServicesContainer = styled.div`
@@ -128,8 +102,4 @@ export const StreamServicesItem = styled.img`
   height: 50px;
   opacity: 0.7;
   border-radius: ${borders.borderMd};
-
-  @media screen and (max-width: 1268px) {
-    display: none;
-  }
 `;

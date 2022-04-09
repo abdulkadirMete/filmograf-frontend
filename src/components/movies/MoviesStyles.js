@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Container, Section } from "../../styles/globalStyles";
+import { colors } from "../../styles/variables";
 
 export const MovieSection = styled(Section)`
   padding-top: 0;

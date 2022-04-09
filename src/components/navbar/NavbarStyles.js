@@ -11,7 +11,7 @@ export const Nav = styled.nav`
   background-color: ${colors.colorNav};
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 9;
   transform: translateY(0%);
   transition: transform 0.5s ease-out;
 

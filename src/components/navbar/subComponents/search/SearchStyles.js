@@ -55,6 +55,7 @@ export const NavSearch = styled.input`
   color: ${colors.colorWhite};
   font-size: 14px;
   font-weight: 500;
+  display: ${({ showNav }) => (showNav ? "block" : "none")};
 
   &:focus {
     outline: none;
