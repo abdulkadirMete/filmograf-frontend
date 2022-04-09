@@ -7,7 +7,7 @@ export const Nav = styled.nav`
   justify-self: center;
   width: 100%;
   height: 80px;
-  position: fixed;
+  position: absolute;
   background-color: ${colors.colorNav};
   top: 0;
   left: 0;

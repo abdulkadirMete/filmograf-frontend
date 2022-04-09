@@ -40,7 +40,6 @@ export const HeroLeft = styled.div`
   @media screen and (max-width: 1268px) {
     text-align: center;
   }
-  z-index: 2;
 `;
 
 // right
