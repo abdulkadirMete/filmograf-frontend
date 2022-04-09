@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { Container } from "../../styles/globalStyles";
 
 export const HeroSection = styled.section`
+  min-height: 100%;
   height: 100vh;
   padding: 2rem 0;
   display: flex;
   align-items: center;
-  position: relative;
   overflow: hidden;
 
   @media screen and (max-width: 1268px) {
@@ -45,4 +45,5 @@ export const HeroLeft = styled.div`
 // right
 export const HeroRight = styled.div`
   flex: 1;
+  position: relative;
 `;

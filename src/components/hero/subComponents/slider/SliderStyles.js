@@ -11,7 +11,7 @@ export const HeroSliderWrapper = styled.div`
   width: 525px;
   height: 290px;
   right: 70px;
-  top: 151px;
+  top: 119px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,24 +21,24 @@ export const HeroSliderWrapper = styled.div`
   @media screen and (max-width: 1268px) {
     right: 50%;
     transform: translateX(50%);
-    top: 143px;
+    top: 117px;
   }
 
   @media screen and (max-width: 768px) {
-    top: 114px;
+    top: 82px;
 
     width: 410px;
     height: 230px;
   }
 
   @media screen and (max-width: 568px) {
-    top: 110px;
+    top: 78px;
     width: 320px;
     height: 180px;
   }
 
   @media screen and (max-width: 468px) {
-    top: 102px;
+    top: 77px;
     width: 275px;
     height: 155px;
   }
