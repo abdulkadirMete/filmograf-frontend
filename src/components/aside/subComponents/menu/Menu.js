@@ -1,5 +1,10 @@
-import React, { useContext, useState } from "react";
-import { AiFillContacts, AiFillHome, AiFillSetting } from "react-icons/ai";
+import React, { useContext, useEffect, useState } from "react";
+import {
+  AiFillContacts,
+  AiFillHome,
+  AiFillSetting,
+  AiFillRobot,
+} from "react-icons/ai";
 import { BiMovie } from "react-icons/bi";
 import { BsCalendarDateFill } from "react-icons/bs";
 import { FaListAlt, FaHackerrank } from "react-icons/fa";
@@ -10,6 +15,7 @@ import { AuthContext } from "../../../../context/authContext/AuthContext";
 import { UtilContext } from "../../../../context/utilContext/UtilContext";
 import { strings } from "../../../../data/text";
 import { Release } from "../../../filters/subComponents/release/Release";
+import { Robot } from "../../../filters/subComponents/robot/Robot";
 import { Type } from "../../../filters/subComponents/type/Type";
 import { Submenu } from "../submenu/Submenu";
 import { MenuContainer, MenuGroup, MenuItem } from "./MenuStyles";
@@ -17,23 +23,27 @@ import { MenuContainer, MenuGroup, MenuItem } from "./MenuStyles";
 export const Menu = () => {
   // effect
   const { toggleContact, toggleSubmenu, toggleAside } = useContext(UtilContext);
-  const [showRelease, setShowRelease] = useState(false);
+  const [prop, setProp] = useState({ children: null, title: null });
 
-  // props
-  const releaseProp = {
-    title: strings.releaseTitle,
-    children: <Release mobileMenuMode={true} />,
-  };
-
-  const typeProp = {
-    title: strings.typeTitle,
-    children: <Type mobileMenuMode={true} />,
-  };
-
-  // handle show submenu
-  const handleSubmenu = (show) => {
+  // determine submenu children
+  const determineSubMenu = (title) => {
+    if (title === "type") {
+      setProp({
+        title: strings.typeTitle,
+        children: <Type mobileMenuMode={true} />,
+      });
+    } else if (title === "release") {
+      setProp({
+        title: strings.releaseTitle,
+        children: <Release mobileMenuMode={true} />,
+      });
+    } else if (title === "robot") {
+      setProp({
+        title: strings.searchRobot,
+        children: <Robot mobileMenuMode={true} />,
+      });
+    }
     toggleSubmenu(true);
-    setShowRelease(show);
   };
 
   // handle logout
@@ -74,22 +84,29 @@ export const Menu = () => {
         </MenuGroup>
       </Link>
 
-      <MenuGroup onClick={() => handleSubmenu(true)}>
+      <MenuGroup onClick={() => determineSubMenu("release")}>
         <BsCalendarDateFill />
         <MenuItem>{strings.releaseTitle}</MenuItem>
       </MenuGroup>
 
-      <MenuGroup onClick={() => handleSubmenu(false)}>
+      <MenuGroup onClick={() => determineSubMenu("type")}>
         <BiMovie />
         <MenuItem>{strings.typeTitle}</MenuItem>
       </MenuGroup>
 
-      <Link to="/settings" onClick={() => toggleAside(false)}>
-        <MenuGroup>
-          <AiFillSetting />
-          <MenuItem>{strings.settings}</MenuItem>
-        </MenuGroup>
-      </Link>
+      <MenuGroup onClick={() => determineSubMenu("robot")}>
+        <AiFillRobot />
+        <MenuItem>{strings.searchRobot}</MenuItem>
+      </MenuGroup>
+
+      {user && (
+        <Link to="/settings" onClick={() => toggleAside(false)}>
+          <MenuGroup>
+            <AiFillSetting />
+            <MenuItem>{strings.settings}</MenuItem>
+          </MenuGroup>
+        </Link>
+      )}
 
       <MenuGroup onClick={() => handleToggleContact()}>
         <AiFillContacts />
@@ -104,10 +121,7 @@ export const Menu = () => {
       )}
 
       {/* submenus */}
-      <Submenu
-        children={showRelease ? releaseProp.children : typeProp.children}
-        title={showRelease ? releaseProp.title : typeProp.title}
-      />
+      <Submenu children={prop.children} title={prop.title} />
     </MenuContainer>
   );
 };

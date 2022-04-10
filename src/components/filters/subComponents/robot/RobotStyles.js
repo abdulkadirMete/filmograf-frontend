@@ -8,7 +8,7 @@ export const RobotContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
-  row-gap: 0.5rem;
+  row-gap: ${({ mobileMenuMode }) => (mobileMenuMode ? "1rem" : ".5rem")};
 `;
 
 export const RobotSelect = styled.select`

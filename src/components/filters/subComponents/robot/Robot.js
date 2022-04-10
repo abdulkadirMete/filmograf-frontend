@@ -7,6 +7,7 @@ import {
 } from "../../../../context/movieContext/apiCalls";
 import { MovieContext } from "../../../../context/movieContext/MovieContext";
 import { TypeContext } from "../../../../context/typeContext/TypeContext";
+import { UtilContext } from "../../../../context/utilContext/UtilContext";
 import { imdbOptions, years } from "../../../../data/options";
 import { strings } from "../../../../data/text";
 import { scrollToDivider } from "../../../../helpers/helpers";
@@ -21,8 +22,10 @@ import {
   RobotSelect,
 } from "./RobotStyles";
 
-export const Robot = () => {
+export const Robot = ({ mobileMenuMode }) => {
   const { types } = useContext(TypeContext);
+  const { toggleAside } = useContext(UtilContext);
+
   const { dispatch: movieDispatch } = useContext(MovieContext);
   const [robotType, setRobotType] = useState("");
   const [robotRelease, setRobotRelease] = useState("");
@@ -44,16 +47,20 @@ export const Robot = () => {
     navigate(
       `/filter/robot/?type=${robotType}&release=${robotRelease}&imdb=${robotImdb}`
     );
+    toggleAside(false);
     scrollToDivider();
   };
 
   return (
     <RobotSection>
-      <CommonHeader>
-        <AiFillRobot className="icon" />
-        <SectionHeading>{strings.searchRobot}</SectionHeading>
-      </CommonHeader>
-      <RobotContainer>
+      {!mobileMenuMode && (
+        <CommonHeader>
+          <AiFillRobot className="icon" />
+          <SectionHeading>{strings.searchRobot}</SectionHeading>
+        </CommonHeader>
+      )}
+
+      <RobotContainer mobileMenuMode={mobileMenuMode}>
         <RobotSelect
           name="type"
           value={robotType}

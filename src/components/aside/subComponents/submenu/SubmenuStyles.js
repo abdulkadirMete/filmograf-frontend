@@ -22,7 +22,6 @@ export const SubmenuContent = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-  align-items: center;
   height: calc(100% - 70px);
   overflow-y: auto;
 

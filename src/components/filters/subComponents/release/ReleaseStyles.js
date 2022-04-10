@@ -11,10 +11,6 @@ export const ReleaseContainer = styled.div`
   gap: 0.5rem;
   cursor: pointer;
 
-  .active {
-    ${ActiveBoxStyle}
-  }
-
   /* mobile menu */
 
   @media screen and (max-width: 568px) {
@@ -51,5 +47,9 @@ export const ReleaseItem = styled.div`
       mobileMenuMode ? colors.colorWhite : colors.colorLogo};
 
     transform: scale(1.2);
+  }
+
+  &.active {
+    ${ActiveBoxStyle}
   }
 `;
