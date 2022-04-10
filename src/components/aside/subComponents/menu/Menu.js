@@ -96,31 +96,6 @@ export const Menu = () => {
         <MenuItem>{strings.contact}</MenuItem>
       </MenuGroup>
 
-      {/* pseude element */}
-      <MenuGroup onClick={() => handleToggleContact()}>
-        <AiFillContacts />
-        <MenuItem>{strings.contact}</MenuItem>
-      </MenuGroup>
-      <MenuGroup onClick={() => handleToggleContact()}>
-        <AiFillContacts />
-        <MenuItem>{strings.contact}</MenuItem>
-      </MenuGroup>
-      <MenuGroup onClick={() => handleToggleContact()}>
-        <AiFillContacts />
-        <MenuItem>{strings.contact}</MenuItem>
-      </MenuGroup>
-      <MenuGroup onClick={() => handleToggleContact()}>
-        <AiFillContacts />
-        <MenuItem>{strings.contact}</MenuItem>
-      </MenuGroup>
-
-      <MenuGroup onClick={() => handleToggleContact()}>
-        <AiFillContacts />
-        <MenuItem>{strings.contact}</MenuItem>
-      </MenuGroup>
-
-      {/* end of pseuede element */}
-
       {user && (
         <MenuGroup>
           <ImExit />
