@@ -20,7 +20,6 @@ export const PlayButton = ({ video, increaseMovieView }) => {
         window.location.href = video;
       } else if (increaseViewError) {
         toast.error(strings.defaultError);
-        window.location.href = video;
       }
     }
     setRedirectLock(false);
