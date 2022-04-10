@@ -71,6 +71,16 @@ export const AvatarGroup = styled.div`
   display: flex;
   align-items: center;
   column-gap: 1rem;
+
+  @media screen and (max-width: 468px) {
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+`;
+
+export const DialogButtonGroup = styled.div`
+  display: flex;
+  column-gap: 1rem;
 `;
 
 export const AvatarButton = styled(ButtonThird)`

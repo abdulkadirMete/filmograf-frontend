@@ -23,6 +23,7 @@ import {
   AvatarButton,
   AvatarGroup,
   AvatarInput,
+  DialogButtonGroup,
   HeadGroup,
   SettingInputGroup,
   SettingLabelSmall,
@@ -162,7 +163,7 @@ export const Settings = () => {
           <AvatarGroup>
             <Avatar src={preview ? preview : purifyUserImage(user.img)} />
             {preview ? (
-              <>
+              <DialogButtonGroup>
                 <DialogButton type="button" onClick={handleUploadUserImage}>
                   {strings.save}
                 </DialogButton>
@@ -176,7 +177,7 @@ export const Settings = () => {
                 >
                   {strings.cancel}
                 </DialogButton>
-              </>
+              </DialogButtonGroup>
             ) : (
               <AvatarButton
                 type="button"
