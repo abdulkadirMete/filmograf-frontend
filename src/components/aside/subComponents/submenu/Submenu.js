@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { BiArrowBack } from "react-icons/bi";
 import { UtilContext } from "../../../../context/utilContext/UtilContext";
 import {
-  SubmenuContainer, SubmenuContent,
+  SubmenuContainer,
+  SubmenuContent,
   SubmenuHeader,
   SubmenuHeading
 } from "./SubmenuStyles";

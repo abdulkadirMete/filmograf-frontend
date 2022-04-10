@@ -16,14 +16,13 @@ export const PlayButton = ({ video, increaseMovieView }) => {
     if (redirectLock) {
       if (increaseViewLoading) return;
       if (increaseViewSuccess) {
-        console.log("work");
         window.location.href = video;
-      } else if (increaseViewError) {
+      } else {
         toast.error(strings.defaultError);
       }
+      setRedirectLock(false);
     }
-    setRedirectLock(false);
-  }, [redirectLock, increaseViewSuccess, increaseViewError]);
+  }, [redirectLock, increaseViewSuccess]);
 
   const handleClick = () => {
     increaseMovieView();

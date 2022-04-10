@@ -5,6 +5,17 @@ export const MenuContainer = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 0.5rem;
+  overflow-y: auto;
+
+  /* padding for last element */
+  #container > :last-child {
+    margin-bottom: 2rem;
+  }
+
+  /* hide scrollbar  */
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   svg {
     font-size: 2rem;

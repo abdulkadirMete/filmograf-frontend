@@ -58,17 +58,9 @@ export const MovieInnerInfo = styled.div`
   column-gap: 1rem;
 `;
 
-export const MovieImdbContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 1.5rem;
-  background-color: ${colors.colorLastCommentsBg};
-  box-shadow: ${shadows.imdbItemShadow};
-`;
+export const MovieImdbContainer = styled.div``;
 
 export const MovieImdb = styled.span`
-  color: ${colors.colorPaleWhite};
+  color: ${colors.colorLogo};
   font-weight: 600;
 `;

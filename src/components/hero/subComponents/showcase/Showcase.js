@@ -50,7 +50,7 @@ export const Showcase = () => {
   }
   return (
     <HeroShowcaseWrapper>
-      <HeroHeading>{strings.heroHeading}</HeroHeading>
+      <HeroHeading><span></span>{strings.heroHeading}</HeroHeading>
       <HeroText showcase={true} grey={true}>
         {strings.heroText}
       </HeroText>

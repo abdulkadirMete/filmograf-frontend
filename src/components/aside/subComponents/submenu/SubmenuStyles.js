@@ -23,8 +23,18 @@ export const SubmenuContent = styled.div`
   flex-direction: column;
   row-gap: 1rem;
   align-items: center;
-  height: 80%;
+  height: calc(100% - 70px);
   overflow-y: auto;
+
+  /* padding for last element */
+  #container > :last-child {
+    margin-bottom: 2rem;
+  }
+
+  /* hide scrollbar  */
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 // heading
