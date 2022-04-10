@@ -3,7 +3,6 @@ import { FaPlay } from "react-icons/fa";
 import { MovieContext } from "../../../../context/movieContext/MovieContext";
 import { strings } from "../../../../data/text";
 import { PlayButtonContainer } from "./PlayButtonStyles";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export const PlayButton = ({ video, increaseMovieView }) => {
@@ -13,6 +12,7 @@ export const PlayButton = ({ video, increaseMovieView }) => {
 
   console.log(increaseViewSuccess);
   useEffect(() => {
+    console.log("work");
     if (redirectLock) {
       if (increaseViewLoading) return;
       if (increaseViewSuccess) {
@@ -25,6 +25,7 @@ export const PlayButton = ({ video, increaseMovieView }) => {
   }, [redirectLock, increaseViewSuccess]);
 
   const handleClick = () => {
+    if (redirectLock) return setRedirectLock(false);
     increaseMovieView();
     if (video.includes(strings.brokenSp)) {
       alert(strings.brokenSpMessage);
