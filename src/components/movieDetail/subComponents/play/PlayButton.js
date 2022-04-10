@@ -11,6 +11,7 @@ export const PlayButton = ({ video, increaseMovieView }) => {
     useContext(MovieContext);
   const [redirectLock, setRedirectLock] = useState(false);
 
+  console.log(increaseViewSuccess);
   useEffect(() => {
     if (redirectLock) {
       if (increaseViewLoading) return;
@@ -19,6 +20,7 @@ export const PlayButton = ({ video, increaseMovieView }) => {
         window.location.href = video;
       } else if (increaseViewError) {
         toast.error(strings.defaultError);
+        window.location.href = video;
       }
       setRedirectLock(false);
     }

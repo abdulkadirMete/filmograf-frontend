@@ -28,7 +28,6 @@ export const SubmenuContent = styled.div`
 `;
 
 // heading
-
 export const SubmenuHeader = styled.div`
   display: flex;
   justify-content: space-between;
