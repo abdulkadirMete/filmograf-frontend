@@ -22,9 +22,9 @@ export const PlayButton = ({ video, increaseMovieView }) => {
         toast.error(strings.defaultError);
         window.location.href = video;
       }
-      setRedirectLock(false);
     }
-  }, [redirectLock, increaseViewSuccess]);
+    setRedirectLock(false);
+  }, [redirectLock, increaseViewSuccess, increaseViewError]);
 
   const handleClick = () => {
     increaseMovieView();
