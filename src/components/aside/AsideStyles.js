@@ -9,6 +9,7 @@ export const AsideMenu = styled.aside`
   background: ${colors.colorAsideTry};
   top: 0;
   left: 0;
+  bottom: 0;
   z-index: 99;
   transform: translateX(-100%);
   transition: transform 0.3s ease-out;

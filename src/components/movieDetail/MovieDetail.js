@@ -22,7 +22,7 @@ export const MovieDetail = () => {
   const { singleMovieLoading, singleMovie, singleMovieError, dispatch } =
     useContext(MovieContext);
 
-  const { toggleNav } = useContext(UtilContext);
+  const { toggleNav, showAside } = useContext(UtilContext);
 
   const {
     cast,
@@ -66,7 +66,7 @@ export const MovieDetail = () => {
 
   return (
     <>
-      <DetailSection>
+      <DetailSection showAside={showAside}>
         <DetailContainer>
           <MovieImageGroup
             _id={id}

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AsideContainer, AsideMenu } from "./AsideStyles";
 import { MdClose } from "react-icons/md";
 import { Profile } from "./subComponents/profile/Profile";
@@ -11,6 +11,11 @@ import { BlankProfile } from "./subComponents/blankProfile/BlankProfile";
 export const Aside = () => {
   const { user } = useContext(AuthContext);
   const { toggleAside, showAside } = useContext(UtilContext);
+
+  // prevent body scroll when aside is open
+  useEffect(() => {
+    document.body.style.overflow = showAside ? "hidden" : "auto";
+  }, [showAside]);
 
   return (
     <AsideMenu className={showAside ? "open" : null}>

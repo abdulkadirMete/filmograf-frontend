@@ -23,7 +23,7 @@ export const SubmenuContent = styled.div`
   flex-direction: column;
   row-gap: 1rem;
   align-items: center;
-  height: 600px;
+  height: 80%;
   overflow-y: auto;
 `;
 
