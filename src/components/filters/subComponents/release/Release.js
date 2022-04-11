@@ -29,7 +29,6 @@ export const Release = ({ mobileMenuMode }) => {
 
   // drop
   const [drop, setDrop] = useState(false);
-
   return (
     <ReleaseSection mobileMenuMode={mobileMenuMode}>
       {!mobileMenuMode && (
@@ -44,7 +43,7 @@ export const Release = ({ mobileMenuMode }) => {
             <Link to={`/filter/release/${year}`} key={year}>
               <ReleaseItem
                 mobileMenuMode={mobileMenuMode}
-                className={year == release ? "active" : null}
+                className={year == release && "active"}
                 onClick={handleReleaseClick}
               >
                 {year}
