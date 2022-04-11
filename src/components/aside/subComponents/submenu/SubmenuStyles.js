@@ -46,7 +46,7 @@ export const SubmenuHeader = styled.div`
 export const SubmenuHeading = styled.span`
   margin-right: auto;
   padding-bottom: 0.5rem;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 2px;
   text-shadow: ${shadows.fancyTextshadow};
