@@ -9,7 +9,7 @@ export const MenuContainer = styled.div`
   height: calc(100% - 220px);
 
   /* padding for last element */
-  #container > :last-child {
+  & > :last-child {
     margin-bottom: 2rem;
   }
 

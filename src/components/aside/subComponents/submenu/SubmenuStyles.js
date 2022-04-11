@@ -26,7 +26,7 @@ export const SubmenuContent = styled.div`
   overflow-y: auto;
 
   /* padding for last element */
-  #container > :last-child {
+  & > :last-child {
     margin-bottom: 2rem;
   }
 
