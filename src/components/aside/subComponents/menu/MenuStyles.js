@@ -9,8 +9,8 @@ export const MenuContainer = styled.div`
   height: calc(100% - 220px);
 
   /* padding for last element */
-  & > :last-child {
-    margin-bottom: 4rem;
+  &:last-child {
+    margin-bottom: 2rem;
   }
 
   /* hide scrollbar  */
