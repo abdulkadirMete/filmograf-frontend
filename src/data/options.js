@@ -2,7 +2,7 @@ import { colors } from "../styles/variables";
 import { strings } from "./text";
 // item per page
 export const moviePerPage = 20;
-export const slidePerSlider = 16;
+export const slidePerSlider = 10;
 
 // item per filter types
 export const typeLimitFilter = 16;
