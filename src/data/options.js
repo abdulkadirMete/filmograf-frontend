@@ -59,6 +59,11 @@ export const movieBottomGuide = [
     heading: "Dil: ",
     title: "langs",
   },
+  {
+    isArray: false,
+    heading: "Yapım: ",
+    title: "release",
+  },
 ];
 
 // rating options

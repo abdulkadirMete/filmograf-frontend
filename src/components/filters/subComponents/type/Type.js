@@ -56,7 +56,7 @@ export const Type = ({ mobileMenuMode }) => {
             <Link to={`/filter/types/${item._id}`} key={item._id}>
               <TypeItem
                 mobileMenuMode={mobileMenuMode}
-                className={item._id === type ? "active" : null}
+                className={item._id === type && "active"}
                 onClick={() => handleTypeClick(item._id)}
                 key={item._id}
                 id={item._id}

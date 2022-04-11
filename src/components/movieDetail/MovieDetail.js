@@ -85,6 +85,7 @@ export const MovieDetail = () => {
               director={director}
               langs={langs}
               type={type}
+              release={release}
               desc={desc?.desc}
             ></MovieBottomInfo>
             <Strip />
