@@ -6,6 +6,7 @@ export const MenuContainer = styled.div`
   flex-direction: column;
   row-gap: 0.5rem;
   overflow-y: auto;
+  height: calc(100% - 220px);
 
   /* padding for last element */
   #container > :last-child {
