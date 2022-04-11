@@ -1,14 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { BsCalendarDateFill } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";
 import { setRobotFilter } from "../../../../context/movieContext/apiCalls";
 import { MovieContext } from "../../../../context/movieContext/MovieContext";
 import { UtilContext } from "../../../../context/utilContext/UtilContext";
-import {
-  releaseLimitFilter,
-  scrollSettings,
-  years,
-} from "../../../../data/options";
+import { releaseLimitFilter, years } from "../../../../data/options";
 import { strings } from "../../../../data/text";
 import { scrollToDivider } from "../../../../helpers/helpers";
 import { SectionHeading } from "../../../../styles/globalStyles";
@@ -43,7 +39,7 @@ export const Release = ({ mobileMenuMode }) => {
             <Link to={`/filter/release/${year}`} key={year}>
               <ReleaseItem
                 mobileMenuMode={mobileMenuMode}
-                className={year == release && "active"}
+                className={year === parseInt(release) && "active"}
                 onClick={handleReleaseClick}
               >
                 {year}

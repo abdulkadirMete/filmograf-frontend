@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { borders, colors, shadows } from "../../styles/variables";
+import { borders, colors} from "../../styles/variables";
 
 export const MovieContainer = styled.div`
   display: flex;
@@ -61,6 +61,7 @@ export const MovieInnerInfo = styled.div`
 export const MovieImdbContainer = styled.div``;
 
 export const MovieImdb = styled.span`
-  color: ${colors.colorLogo};
+  color: ${colors.colorPaleWhite};
   font-weight: 600;
+  font-size: 1.2rem;
 `;
