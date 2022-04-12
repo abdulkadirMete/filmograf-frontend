@@ -28,7 +28,8 @@ export const HeroContainer = styled(Container)`
 
   @media screen and (max-width: 1268px) {
     flex-direction: column-reverse;
-    padding: 40px 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 `;
 

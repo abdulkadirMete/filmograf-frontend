@@ -1,9 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import { FaPlay } from "react-icons/fa";
-import { MovieContext } from "../../../../context/movieContext/MovieContext";
 import { strings } from "../../../../data/text";
 import { PlayButtonContainer } from "./PlayButtonStyles";
-import { toast } from "react-toastify";
 
 export const PlayButton = ({ video, increaseMovieView }) => {
   // const { increaseViewLoading, increaseViewSuccess, increaseViewError } =

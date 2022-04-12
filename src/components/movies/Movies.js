@@ -18,7 +18,6 @@ export const Movies = () => {
     unobserveOnEnter: true,
   });
 
-  console.log(isVisible);
   return (
     <MovieSection ref={renderRef}>
       <SectionDivider scrollRef={scrollRef} />
