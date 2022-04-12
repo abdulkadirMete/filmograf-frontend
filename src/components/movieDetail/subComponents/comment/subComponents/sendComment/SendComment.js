@@ -23,6 +23,9 @@ export const SendComment = () => {
 
   const handleSendComment = () => {
     if (user) {
+      if (comment.length < 3)
+        return toast.warn(strings.sendCommentLengthTooShort);
+
       const commentObject = {
         user: user._id,
         movie: singleMovie._id,

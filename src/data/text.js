@@ -83,6 +83,7 @@ export const strings = {
   lastCommentsHeading: "Son Yorumlar",
   copyRightText: `Filmograf © ${new Date().getFullYear()} - Tüm Hakları Saklıdır.`,
   sendCommentAuthDenied: "Yorum yapabilmek için önce giriş yapmalısın!!",
+  sendCommentLengthTooShort: "Yorumunuz çok kısa !!",
   navMenuPopular: "Popüler",
   navMenuMyList: "Listem",
   navMenuContact: "İletişim",
