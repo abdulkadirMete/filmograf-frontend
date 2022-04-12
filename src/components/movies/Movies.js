@@ -1,4 +1,5 @@
 import React, { useContext, useRef } from "react";
+import { useInView } from "react-hook-inview";
 import "react-toastify/dist/ReactToastify.css";
 import { MovieContext } from "../../context/movieContext/MovieContext";
 import { Filters } from "../filters/Filters";
@@ -11,16 +12,25 @@ export const Movies = () => {
   const { isLoading } = useContext(MovieContext);
   const scrollRef = useRef(null);
 
+  // check is need render movie list
+  const [renderRef, isVisible] = useInView({
+    threshold: 0,
+    unobserveOnEnter: true,
+  });
+
+  console.log(isVisible)
   return (
-    <MovieSection>
+    <MovieSection ref={renderRef}>
       <SectionDivider scrollRef={scrollRef} />
-      <MovieContainer>
-        <Showcase>
-          <MovieList />
-          {!isLoading && <Paginate scrollRef={scrollRef} />}
-        </Showcase>
-        <Filters />
-      </MovieContainer>
+      {isVisible && (
+        <MovieContainer>
+          <Showcase>
+            <MovieList />
+            {!isLoading && <Paginate scrollRef={scrollRef} />}
+          </Showcase>
+          <Filters />
+        </MovieContainer>
+      )}
     </MovieSection>
   );
 };

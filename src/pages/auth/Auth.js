@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { LoginForm } from "../../components/auth/LoginForm";
 import { RegisterForm } from "../../components/auth/RegisterForm";
 import { UtilContext } from "../../context/utilContext/UtilContext";
@@ -9,7 +9,7 @@ export const Auth = () => {
   const { showRegister, toggleShowRegister } = useContext(UtilContext);
 
   return (
-    <AuthSection>
+    <AuthSection title="authbg">
       <AuthContainer>
         {showRegister ? (
           <RegisterForm toggleShowRegister={() => toggleShowRegister(false)} />

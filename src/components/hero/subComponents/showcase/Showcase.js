@@ -50,13 +50,18 @@ export const Showcase = () => {
   }
   return (
     <HeroShowcaseWrapper>
-      <HeroHeading><span></span>{strings.heroHeading}</HeroHeading>
+      <HeroHeading>
+        <span></span>
+        {strings.heroHeading}
+      </HeroHeading>
       <HeroText showcase={true} grey={true}>
         {strings.heroText}
       </HeroText>
       <StreamServicesContainer>
         {streamServices.map((item, index) => {
-          return <StreamServicesItem key={index} src={item.path} />;
+          return (
+            <StreamServicesItem key={index} src={item.path} alt={item.alt} />
+          );
         })}
       </StreamServicesContainer>
 

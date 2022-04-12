@@ -2,27 +2,29 @@ import { BsFacebook, BsTwitter, BsInstagram, BsGithub } from "react-icons/bs";
 
 export const footerLinks = [
   {
-    icon: <BsFacebook />,
+    icon: <BsFacebook title='facebook' />,
     link: "https://www.facebook.com/",
+    alt: "facebook",
   },
   {
-    icon: <BsTwitter />,
+    icon: <BsTwitter title="twitter" />,
     link: "https://twitter.com/",
   },
   {
-    icon: <BsInstagram />,
+    icon: <BsInstagram title='instagram'/>,
     link: "https://www.instagram.com/",
+    alt: "instagram",
   },
   {
-    icon: <BsGithub />,
+    icon: <BsGithub title="github" />,
     link: "https://github.com/abdulkadirMete",
   },
 ];
 
 export const streamServices = [
-  { path: "/images/apple.webp" },
-  { path: "/images/netflix.webp" },
-  { path: "/images/puhutv.webp" },
-  { path: "/images/blu.webp" },
-  { path: "/images/amazon.webp" },
+  { path: "/images/apple.webp", alt: "apple" },
+  { path: "/images/netflix.webp", alt: "netflix" },
+  { path: "/images/puhutv.webp", alt: "puhutv" },
+  { path: "/images/blu.webp", alt: "blutv" },
+  { path: "/images/amazon.webp", alt: "amazon" },
 ];

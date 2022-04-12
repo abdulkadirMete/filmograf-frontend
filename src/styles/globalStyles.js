@@ -153,9 +153,10 @@ export const InnerHeading = styled.span`
   font-size: 1.2rem;
 `;
 
-export const SectionHeading = styled.h3`
+export const SectionHeading = styled.h2`
   color: ${colors.colorSlightSectionTexts};
   letter-spacing: 2px;
+  font-size: 1.2rem;
 `;
 
 export const SectionSlight = styled.div`

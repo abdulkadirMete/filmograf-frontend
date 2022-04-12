@@ -19,7 +19,7 @@ export const Footer = () => {
           <FooterLinkGroup>
             {footerLinks.map((item, index) => {
               return (
-                <FooterLink target="_blank" key={index} href={item.link}>
+                <FooterLink target="_blank" key={index} href={item.link} >
                   {item.icon}
                 </FooterLink>
               );

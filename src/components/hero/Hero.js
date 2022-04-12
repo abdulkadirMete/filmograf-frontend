@@ -15,7 +15,7 @@ import { Slider } from "./subComponents/slider/Slider";
 export const Hero = ({ navHideProp }) => {
   return (
     <HeroSection ref={navHideProp}>
-      <HeroImage src="/images/hero.webp" />
+      <HeroImage src="/images/hero.webp" alt="hero" />
       <HeroContainer>
         {/* left */}
         <HeroLeft>
