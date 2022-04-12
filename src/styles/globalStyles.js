@@ -249,6 +249,11 @@ export const Loading = styled.div`
   border-top-color: ${colors.colorLogo};
   animation: spinner 0.6s linear infinite;
 
+  @media screen and (max-width: 768px) {
+    width: 4rem;
+    height: 4rem;
+  }
+
   @keyframes spinner {
     to {
       transform: rotate(360deg);
