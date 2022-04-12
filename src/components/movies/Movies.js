@@ -18,19 +18,17 @@ export const Movies = () => {
     unobserveOnEnter: true,
   });
 
-  console.log(isVisible)
+  console.log(isVisible);
   return (
     <MovieSection ref={renderRef}>
       <SectionDivider scrollRef={scrollRef} />
-      {isVisible && (
-        <MovieContainer>
-          <Showcase>
-            <MovieList />
-            {!isLoading && <Paginate scrollRef={scrollRef} />}
-          </Showcase>
-          <Filters />
-        </MovieContainer>
-      )}
+      <MovieContainer>
+        <Showcase>
+          {isVisible && <MovieList />}
+          {!isLoading && <Paginate scrollRef={scrollRef} />}
+        </Showcase>
+        <Filters />
+      </MovieContainer>
     </MovieSection>
   );
 };
