@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useReducer, useRef } from "react";
+import { baseApiUrl } from "../../data/options";
 import {
   SEND_MAIL_FAIL,
   SEND_MAIL_START,
@@ -57,7 +58,7 @@ export const UtilContextProvider = ({ children }) => {
   const sendMail = async (message) => {
     dispatch({ type: SEND_MAIL_START });
     try {
-      const res = await axios.post("contact", message);
+      const res = await axios.post(`${baseApiUrl}/api/contact`, message);
       dispatch({ type: SEND_MAIL_SUCCESS });
     } catch (err) {
       dispatch({
